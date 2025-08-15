@@ -1,110 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ucapan Spesial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ucapan – Agustus 2025 (Tema Merah)</title>
+  <meta name="description" content="Ucapan bertema merah untuk Agustus 2025, termasuk daftar hari-hari spesial di bulan Agustus." />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('udel.jpg') repeat;
-      background-size: 300px;
-      font-family: 'Quicksand', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      position: relative;
+    :root{
+      --theme:#d62828;           /* merah utama */
+      --theme-ink:#fff7f7;       /* teks terang */
+      --ink:#1f1f1f;             /* teks biasa */
+      --muted:#6b7280;           /* teks redup */
+      --bg: radial-gradient(80rem 80rem at 10% 10%, #ffefef 0%, #ffe3e3 25%, #ffd6d6 45%, #ffcccc 60%, #ffecec 100%);
+      /* Ganti background di bawah ini dengan gambar kamu nanti */
+      /* contoh: body{ background: url('bg-mu.jpg') center/cover fixed no-repeat; } */
     }
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1.5s ease;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+       background: url('udel.jpg') center/cover fixed no-repeat;
     }
-    h1 {
-      text-align: center;
-      color: #ff6b81;
+    .wrap{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:32px 16px;
     }
-    p {
-      color: #333;
-      line-height: 1.6;
-      white-space: pre-line;
+    .card{
+      width:min(960px, 100%);
+      background:rgba(255,255,255,0.82);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(214,40,40,0.2);
+      border-radius:24px;
+      box-shadow: 0 20px 60px rgba(214,40,40,0.15), 0 8px 24px rgba(0,0,0,0.06);
+      overflow:hidden;
     }
-    #topButton {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ff6b81;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    .header{
+      background: linear-gradient(135deg, var(--theme) 0%, #e63946 60%, #ff4d4d 100%);
+      color:var(--theme-ink);
+      padding:28px 28px 24px 28px;
     }
-    #playButton {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #ff6b81;
-      color: white;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.18);
+      border:1px solid rgba(255,255,255,0.35);
+      font-size:12px;
+      letter-spacing:.4px;
+      text-transform:uppercase;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    h1{
+      margin:12px 0 6px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height:1.1;
     }
+    .subtitle{opacity:.95; margin:0; font-size: clamp(14px, 2.2vw, 18px)}
+
+    .content{padding:24px}
+    .greet{
+      margin:0 0 18px;
+      font-size: clamp(18px, 2.6vw, 22px);
+      font-weight:600;
+    }
+    .note{
+      margin:0 0 22px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    @media(min-width:720px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+    .day{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:14px 16px;
+      background:#fff;
+      border:1px solid #f1c8c8;
+      border-left:6px solid var(--theme);
+      border-radius:16px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .day:hover{transform:translateY(-2px); box-shadow:0 8px 24px rgba(214,40,40,0.15)}
+    .date{
+      min-width:62px;
+      text-align:center;
+      background:rgba(214,40,40,.08);
+      border:1px solid rgba(214,40,40,.25);
+      border-radius:12px;
+      padding:8px 10px;
+      line-height:1.1;
+      font-weight:700;
+      color:#a4161a;
+    }
+    .date .d{font-size:22px; display:block}
+    .date .m{font-size:11px; letter-spacing:.4px; text-transform:uppercase}
+    .label{margin:0; font-weight:600}
+    .desc{margin:6px 0 0; color:var(--muted); font-size:14px}
+
+    .footer{
+      padding:16px 24px 28px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      border-top:1px dashed #f1c8c8;
+    }
+    .heart{color:#ff4d4d}
+    .theme-chip{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #f1c8c8; background:#fff
+    }
+    .swatch{width:12px; height:12px; border-radius:3px; background:var(--theme); border:1px solid rgba(0,0,0,.08)}
   </style>
 </head>
 <body>
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Ucapan Agustus 2025">
+      <header class="header">
+        <span class="badge" aria-label="Tema bulan ini">Theme: Red</span>
+        <h1>Heyy, bulan ini tema nya merah ❤️</h1>
+        <p class="subtitle">Selamat <strong>Girlfriend Day</strong> ini untuk lucu-lucuan aja ya !!, kalo ngga dilakuin gapapa !! 🎉</p>
+      </header>
 
-<!-- Tombol Play Musik -->
-<button onclick="playAudio()" id="playButton">▶️</button>
+      <div class="content">
+        <p class="greet">Selamat hari-hari spesial di bulan Agustus 2025! ✨</p>
+        <p class="note">I made some fun days just for you, hehehe.</p>
 
-<!-- Audio -->
-<audio id="bgMusic" loop>
-  <source src="lagu.mp3" type="audio/mpeg">
-  Browser kamu tidak mendukung audio.
-</audio>
+        <div class="grid" aria-live="polite">
+          <!-- Baris kiri -->
+          <article class="day">
+            <div class="date"><span class="d">01</span><span class="m">Agu</span></div>
+            <div>
+              <p class="label">National Girlfriend Day</p>
+              <p class="desc">I love you so much, Kub!. 💕</p>
+            </div>
+          </article>
+          <article class="day">
+            <div class="date"><span class="d">18</span><span class="m">Agu</span></div>
+            <div>
+              <p class="label">National Underwear Day</p>
+              <p class="desc">Lingerie & underwear (harusnya tanggal 5)</p>
+            </div>
+          </article>
+          <article class="day">
+            <div class="date"><span class="d">25</span><span class="m">Agu</span></div>
+            <div>
+              <p class="label">National Red Lipstick Day</p>
+              <p class="desc">Lipstik merah = tanda bahaya & gairah. 💄</p>
+            </div>
+          </article>
 
-<div class="card">
-  <h1>Special for You !</h1>
-  <p>
-Semoga suka yooo, mau kui aku tuku ne rebutan karo customer laine, ono ibuk2 meh nukokke anake juga ngincer gelang kui, awale aku kurang cocok soale pendek, njuk tiba2 ibu2 e gelem sing tak pilih kui, akhire aku nggolek liyane tapi raono sing pas, pindah sing 17k juga malah pilihane lebih sedikit, njuk aku bilang mba e, mba kalo yg gelang tadi masih ada (belum diambil ibu2 sama anaknya), apa bisa di tambah extension? biar agak panjang dikit, katane bisa, pas aku balik lagi udah ga ada, ibu2 e jadi milih itu, tak tunggu sambil pilih2 yg lain ternyata ibu2 e ga jadi.
+          <article class="day">
+            <div class="date"><span class="d">31</span><span class="m">Agu</span></div>
+            <div>
+              <p class="label">World Lovers’ Night</p>
+              <p class="desc">Malam spesial</p>
+            </div>
+          </article>
+        </div>
+      </div>
 
-Emang wes jodoh e tuku gelang kui, karo tak tambahi extension bisa di lepas pasang, jadi bisa panjang dan pendek, nek pendek ben ra nyerimpeti, wkwkwkw, semoga suka yoo, ben good mood, ini juga ada vitamin, ada jajanan juga biar aga banyakan, kartu nya buat ngumpetin gelang e.
-
-Maaf yoo nek aku adalah salah kata / perbuatan selama ini, soale aku ngeliat kamu kaya ne mood e lagi ga baik, aku pun juga kayane banyak salahe huhuhu, sok nggatelii, sok jadi orang sing pelupa, tapi Insyallah nek hal hal baik atau ilmu yang bermanfaat yg membuat kita berkembang ga akan lupa, Aamiinn. 
-
-Stay strong & healthy yooooooooooooooooooooo!!!!!!!!!!!!!
-  </p>
-</div>
-
-<!-- Tombol Scroll ke Atas -->
-<button onclick="scrollToTop()" id="topButton">⬆️</button>
-
-<script>
-function scrollToTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-function playAudio() {
-  var audio = document.getElementById('bgMusic');
-  audio.play();
-}
-</script>
-
+      <footer class="footer">
+        <span>Made with <span class="heart">♥</span> untuk Agustus 2025.</span>
+        <span class="theme-chip" title="Tema warna">
+          <span class="swatch" aria-hidden="true"></span>
+          <span>Red</span>
+        </span>
+      </footer>
+    </section>
+  </main>
 </body>
 </html>
