@@ -7,28 +7,21 @@
   <meta name="description" content="Ucapan bertema merah untuk Agustus 2025, termasuk daftar hari-hari spesial di bulan Agustus." />
   <style>
     :root{
-      --theme:#d62828;           /* merah utama */
-      --theme-ink:#fff7f7;       /* teks terang */
-      --ink:#1f1f1f;             /* teks biasa */
-      --muted:#6b7280;           /* teks redup */
+      --theme:#d62828;
+      --theme-ink:#fff7f7;
+      --ink:#1f1f1f;
+      --muted:#6b7280;
       --bg: radial-gradient(80rem 80rem at 10% 10%, #ffefef 0%, #ffe3e3 25%, #ffd6d6 45%, #ffcccc 60%, #ffecec 100%);
-      /* Ganti background di bawah ini dengan gambar kamu nanti */
-      /* contoh: body{ background: url('bg-mu.jpg') center/cover fixed no-repeat; } */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
-       background: url('udel.jpg') center/cover fixed no-repeat;
+      background: url('udel.jpg') center/cover fixed no-repeat;
     }
-    .wrap{
-      min-height:100%;
-      display:grid;
-      place-items:center;
-      padding:32px 16px;
-    }
+    .wrap{min-height:100%;display:grid;place-items:center;padding:32px 16px;}
     .card{
       width:min(960px, 100%);
       background:rgba(255,255,255,0.82);
@@ -44,85 +37,58 @@
       padding:28px 28px 24px 28px;
     }
     .badge{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.18);
-      border:1px solid rgba(255,255,255,0.35);
-      font-size:12px;
-      letter-spacing:.4px;
-      text-transform:uppercase;
+      display:inline-block;padding:6px 12px;border-radius:999px;
+      background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);
+      font-size:12px;letter-spacing:.4px;text-transform:uppercase;
     }
-    h1{
-      margin:12px 0 6px;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height:1.1;
-    }
-    .subtitle{opacity:.95; margin:0; font-size: clamp(14px, 2.2vw, 18px)}
-
+    h1{margin:12px 0 6px;font-size: clamp(28px, 4vw, 40px);line-height:1.1;}
+    .subtitle{opacity:.95;margin:0;font-size: clamp(14px, 2.2vw, 18px)}
     .content{padding:24px}
-    .greet{
-      margin:0 0 18px;
-      font-size: clamp(18px, 2.6vw, 22px);
-      font-weight:600;
-    }
-    .note{
-      margin:0 0 22px;
-      font-size:16px;
-      color:var(--muted);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:14px;
-    }
-    @media(min-width:720px){
-      .grid{grid-template-columns: 1fr 1fr}
-    }
+    .greet{margin:0 0 18px;font-size: clamp(18px, 2.6vw, 22px);font-weight:600;}
+    .note{margin:0 0 22px;font-size:16px;color:var(--muted);}
+    .grid{display:grid;grid-template-columns: 1fr;gap:14px;}
+    @media(min-width:720px){.grid{grid-template-columns: 1fr 1fr}}
     .day{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      padding:14px 16px;
-      background:#fff;
-      border:1px solid #f1c8c8;
-      border-left:6px solid var(--theme);
-      border-radius:16px;
+      display:flex;gap:14px;align-items:flex-start;
+      padding:14px 16px;background:#fff;border:1px solid #f1c8c8;
+      border-left:6px solid var(--theme);border-radius:16px;
       transition: transform .15s ease, box-shadow .15s ease;
+      cursor:pointer;
     }
-    .day:hover{transform:translateY(-2px); box-shadow:0 8px 24px rgba(214,40,40,0.15)}
+    .day:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(214,40,40,0.15)}
     .date{
-      min-width:62px;
-      text-align:center;
-      background:rgba(214,40,40,.08);
-      border:1px solid rgba(214,40,40,.25);
-      border-radius:12px;
-      padding:8px 10px;
-      line-height:1.1;
-      font-weight:700;
-      color:#a4161a;
+      min-width:62px;text-align:center;background:rgba(214,40,40,.08);
+      border:1px solid rgba(214,40,40,.25);border-radius:12px;
+      padding:8px 10px;line-height:1.1;font-weight:700;color:#a4161a;
     }
-    .date .d{font-size:22px; display:block}
-    .date .m{font-size:11px; letter-spacing:.4px; text-transform:uppercase}
-    .label{margin:0; font-weight:600}
-    .desc{margin:6px 0 0; color:var(--muted); font-size:14px}
-
+    .date .d{font-size:22px;display:block}
+    .date .m{font-size:11px;letter-spacing:.4px;text-transform:uppercase}
+    .label{margin:0;font-weight:600}
+    .desc{margin:6px 0 0;color:var(--muted);font-size:14px}
     .footer{
-      padding:16px 24px 28px;
-      font-size:13px;
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
+      padding:16px 24px 28px;font-size:13px;color:var(--muted);
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
       border-top:1px dashed #f1c8c8;
     }
     .heart{color:#ff4d4d}
-    .theme-chip{
-      display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #f1c8c8; background:#fff
+    .theme-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;
+      border-radius:999px;border:1px solid #f1c8c8;background:#fff}
+    .swatch{width:12px;height:12px;border-radius:3px;background:var(--theme);border:1px solid rgba(0,0,0,.08)}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;display:none;
+      background:rgba(0,0,0,.5);
+      align-items:center;justify-content:center;
+      z-index:999;
     }
-    .swatch{width:12px; height:12px; border-radius:3px; background:var(--theme); border:1px solid rgba(0,0,0,.08)}
+    .modal-content{
+      background:#fff;padding:24px;border-radius:16px;
+      max-width:500px;width:90%;text-align:left;position:relative;
+      line-height:1.6;max-height:80vh;overflow-y:auto;
+    }
+    .modal-content h2{margin-top:0;color:var(--theme)}
+    .close{position:absolute;top:10px;right:14px;font-size:20px;cursor:pointer;color:#666;}
   </style>
 </head>
 <body>
@@ -136,33 +102,95 @@
 
       <div class="content">
         <p class="greet">Selamat hari-hari spesial di bulan Agustus 2025! ✨</p>
-        <p class="note">I made some fun days just for you, sorry for making u feels bad.</p>
+        <p class="note">I made some fun days just for you, sorry for making u feels bad before.</p>
 
         <div class="grid" aria-live="polite">
-          <!-- Baris kiri -->
-          <article class="day">
+          <article class="day" data-title="National Girlfriend Day" data-message="I love you so much, Kub!. 💕<br><br>You are the reason.">
             <div class="date"><span class="d">01</span><span class="m">Agu</span></div>
             <div>
               <p class="label">National Girlfriend Day</p>
               <p class="desc">I love you so much, Kub!. 💕</p>
             </div>
           </article>
-          <article class="day">
+          <article class="day" data-title="National Red Lipstick Day" data-message="Nih aku beliin liptint yg warna Naughty nyahahah 💄<br><br>Lipstik merah itu tanda percaya diri & strong.">
             <div class="date"><span class="d">18</span><span class="m">Agu</span></div>
             <div>
               <p class="label">National Red Lipstick Day</p>
               <p class="desc">Lipstik merah = tanda bahaya & gairah. 💄</p>
             </div>
           </article>
-          <article class="day">
+<!-- Ganti artikel kamu jadi pakai data-message panjang -->
+<article class="day" 
+  data-title="Focus! Strong! Health! & Anti Cupu" 
+  data-message="
+  Nih aku beliin km sesuatu 💝<br><br>
+
+  <strong>1. Blackmores Multivitamin</strong><br>
+  <em>Fungsi utama:</em> Nutrisional dasar, menutup kekurangan vitamin/mineral harian.<br>
+  <em>Manfaat:</em><br>
+  • Support energi (vitamin B-complex → metabolisme karbo/lemak/protein).<br>
+  • Imun lebih kuat (vitamin C, zinc).<br>
+  • Kesehatan otak & mood stabil (B12, folat, magnesium).<br>
+  • Ningkatin Focus.<br>
+  <em>Kasiat ke tubuh:</em> Jadi fondasi biar tubuh ga gampang drop.<br><br>
+
+  <strong>2. Vitamin E IPI</strong><br>
+  <em>Fungsi utama:</em> Antioksidan kuat.<br>
+  <em>Manfaat:</em><br>
+  • Kulit lebih sehat, lembab, glowing.<br>
+  • Support kesehatan reproduksi.<br>
+  • Perlindungan sel tubuh dari stres oksidatif.<br><br>
+
+  <strong>3. Maca Root (Solaray)</strong><br>
+  <em>Fungsi utama:</em> Adaptogen + energi.<br>
+  <em>Manfaat:</em><br>
+  • Boost stamina & energi (kayak ginseng alami).<br>
+  • Libido enhancer.<br>
+  • Mood & hormon lebih seimbang.<br><br>
+  • Ningkatin Focus.<br>
+
+  <strong>4. Tribulus (Muscletech)</strong><br>
+  <em>Fungsi utama:</em> Libido booster natural.<br>
+  <em>Manfaat:</em><br>
+  • Naikkan gairah seksual bertahap.<br>
+  • Tingkatkan energi & stamina.<br>
+  • Efek jangka panjang: vitalitas & mood lebih stabil.<br><br>
+
+  <strong>Cara konsumsi:</strong><br>
+  ☀️ Pagi (07.00–09.00)<br>
+  💊 1 tablet Multivitamin<br>
+  💊 1 kapsul Maca Root<br><br>
+
+  🌞 Siang (12.00–14.00)<br>
+  💊 1 kapsul Vitamin E<br><br>
+
+  ⭐ Optional<br>
+  💊 1 kapsul Tribulus (kalau lagi pengen On Power)<br><br>
+
+  <strong>Goals setelah 2 minggu – 1 bulan:</strong><br>
+  ✅ Auto Focus!<br>
+  ✅ Energi & stamina naik<br>
+  ✅ Vitalitas & libido meningkat<br>
+  ✅ Mood stabil & confidence naik<br>
+  ✅ Tidur lebih nyenyak<br>
+  ✅ Imun lebih kuat<br>
+  ✅ Kebugaran jangka panjang tetap terjaga<br>
+  ">
+  <div class="date"><span class="d">24</span><span class="m">Agu</span></div>
+  <div>
+    <p class="label">Focus! Strong! Health! & Anti Cupu</p>
+    <p class="desc">Stay strong & percaya diri! 💪</p>
+  </div>
+</article>
+
+          <article class="day" data-title="National Underwear Day" data-message="Hari lingerie & underwear spesial buat kamu 😉<br><br>Dress up just for fun, biar tambah exciting.">
             <div class="date"><span class="d">25</span><span class="m">Agu</span></div>
             <div>
               <p class="label">National Underwear Day</p>
               <p class="desc">Lingerie & underwear (harusnya tanggal 5)</p>
             </div>
           </article>
-
-          <article class="day">
+          <article class="day" data-title="World Lovers’ Night" data-message="Malam spesial ❤️🔥<br><br>Tentuin saja tanggal dan tempat !">
             <div class="date"><span class="d">31</span><span class="m">Agu</span></div>
             <div>
               <p class="label">World Lovers’ Night</p>
@@ -181,7 +209,35 @@
       </footer>
     </section>
   </main>
+
+  <!-- Modal -->
+  <div class="modal" id="popup">
+    <div class="modal-content">
+      <span class="close" id="closeBtn">&times;</span>
+      <h2 id="popupTitle"></h2>
+      <p id="popupMessage"></p>
+    </div>
+  </div>
+
+  <script>
+    const days = document.querySelectorAll(".day");
+    const modal = document.getElementById("popup");
+    const closeBtn = document.getElementById("closeBtn");
+    const title = document.getElementById("popupTitle");
+    const message = document.getElementById("popupMessage");
+
+    days.forEach(day=>{
+      day.addEventListener("click", ()=>{
+        title.textContent = day.dataset.title;
+        message.innerHTML = day.dataset.message; // pakai innerHTML biar bisa pakai <br>
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", ()=> modal.style.display="none");
+    window.addEventListener("click", (e)=>{
+      if(e.target===modal) modal.style.display="none";
+    });
+  </script>
 </body>
 </html>
-
-
