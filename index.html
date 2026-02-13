@@ -1,244 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ucapan – Agustus 2025 (Tema Merah)</title>
-  <meta name="description" content="Ucapan bertema merah untuk Agustus 2025, termasuk daftar hari-hari spesial di bulan Agustus." />
-  <style>
-    :root{
-      --theme:#d62828;
-      --theme-ink:#fff7f7;
-      --ink:#1f1f1f;
-      --muted:#6b7280;
-      --bg: radial-gradient(80rem 80rem at 10% 10%, #ffefef 0%, #ffe3e3 25%, #ffd6d6 45%, #ffcccc 60%, #ffecec 100%);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--ink);
-      background: url('udel.jpg') center/cover fixed no-repeat;
-    }
-    .wrap{min-height:100%;display:grid;place-items:center;padding:32px 16px;}
-    .card{
-      width:min(960px, 100%);
-      background:rgba(255,255,255,0.82);
-      backdrop-filter: blur(10px);
-      border:1px solid rgba(214,40,40,0.2);
-      border-radius:24px;
-      box-shadow: 0 20px 60px rgba(214,40,40,0.15), 0 8px 24px rgba(0,0,0,0.06);
-      overflow:hidden;
-    }
-    .header{
-      background: linear-gradient(135deg, var(--theme) 0%, #e63946 60%, #ff4d4d 100%);
-      color:var(--theme-ink);
-      padding:28px 28px 24px 28px;
-    }
-    .badge{
-      display:inline-block;padding:6px 12px;border-radius:999px;
-      background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);
-      font-size:12px;letter-spacing:.4px;text-transform:uppercase;
-    }
-    h1{margin:12px 0 6px;font-size: clamp(28px, 4vw, 40px);line-height:1.1;}
-    .subtitle{opacity:.95;margin:0;font-size: clamp(14px, 2.2vw, 18px)}
-    .content{padding:24px}
-    .greet{margin:0 0 18px;font-size: clamp(18px, 2.6vw, 22px);font-weight:600;}
-    .note{margin:0 0 22px;font-size:16px;color:var(--muted);}
-    .grid{display:grid;grid-template-columns: 1fr;gap:14px;}
-    @media(min-width:720px){.grid{grid-template-columns: 1fr 1fr}}
-    .day{
-      display:flex;gap:14px;align-items:flex-start;
-      padding:14px 16px;background:#fff;border:1px solid #f1c8c8;
-      border-left:6px solid var(--theme);border-radius:16px;
-      transition: transform .15s ease, box-shadow .15s ease;
-      cursor:pointer;
-    }
-    .day:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(214,40,40,0.15)}
-    .date{
-      min-width:62px;text-align:center;background:rgba(214,40,40,.08);
-      border:1px solid rgba(214,40,40,.25);border-radius:12px;
-      padding:8px 10px;line-height:1.1;font-weight:700;color:#a4161a;
-    }
-    .date .d{font-size:22px;display:block}
-    .date .m{font-size:11px;letter-spacing:.4px;text-transform:uppercase}
-    .label{margin:0;font-weight:600}
-    .desc{margin:6px 0 0;color:var(--muted);font-size:14px}
-    .footer{
-      padding:16px 24px 28px;font-size:13px;color:var(--muted);
-      display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-      border-top:1px dashed #f1c8c8;
-    }
-    .heart{color:#ff4d4d}
-    .theme-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;
-      border-radius:999px;border:1px solid #f1c8c8;background:#fff}
-    .swatch{width:12px;height:12px;border-radius:3px;background:var(--theme);border:1px solid rgba(0,0,0,.08)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? ❤️</title>
+    <style>
+        :root {
+            --primary-red: #8b0000;
+            --light-pink: #ff4d6d;
+            --gold: #ffd700;
+        }
 
-    /* Modal */
-    .modal{
-      position:fixed;inset:0;display:none;
-      background:rgba(0,0,0,.5);
-      align-items:center;justify-content:center;
-      z-index:999;
-    }
-    .modal-content{
-      background:#fff;padding:24px;border-radius:16px;
-      max-width:500px;width:90%;text-align:left;position:relative;
-      line-height:1.6;max-height:80vh;overflow-y:auto;
-    }
-    .modal-content h2{margin-top:0;color:var(--theme)}
-    .close{position:absolute;top:10px;right:14px;font-size:20px;cursor:pointer;color:#666;}
-  </style>
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white; display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; overflow-x: hidden;
+            background-color: #000; /* Fallback warna hitam */
+        }
+
+        #bg-video {
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            z-index: -1; object-fit: cover;
+            filter: brightness(40%); 
+        }
+
+        .container {
+            text-align: center; background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px); padding: 40px; border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+            max-width: 450px; width: 90%; margin: 20px;
+        }
+
+        h1 { font-size: 2.2em; margin-bottom: 20px; text-shadow: 2px 2px 10px var(--light-pink); }
+        .btn-group { display: flex; justify-content: center; gap: 20px; position: relative; height: 60px; align-items: center; }
+
+        button {
+            padding: 15px 35px; font-size: 1.1em; border: none;
+            border-radius: 50px; cursor: pointer; transition: 0.3s; font-weight: bold;
+        }
+
+        #yesBtn { background: var(--light-pink); color: white; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); z-index: 10; }
+        #noBtn { background: #333; color: #999; }
+
+        .shake { animation: shake 0.5s infinite; }
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(2px, 2px); }
+            50% { transform: translate(-2px, -2px); }
+            75% { transform: translate(2px, -2px); }
+        }
+
+        .menu-list { display: none; text-align: left; }
+        .task-item {
+            background: rgba(255, 255, 255, 0.05); margin: 8px 0;
+            padding: 12px; border-radius: 12px; display: flex; align-items: center;
+            cursor: pointer; border: 1px solid transparent; transition: 0.2s;
+        }
+        .task-item:hover { background: rgba(255, 77, 109, 0.15); border-color: var(--light-pink); }
+        input[type="checkbox"] { margin-right: 15px; accent-color: var(--light-pink); transform: scale(1.3); }
+
+        #submitTasks, #prizeBtn { width: 100%; margin-top: 25px; background: var(--primary-red); color: white; }
+
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.95);
+            justify-content: center; align-items: center;
+        }
+        .modal-content {
+            background: linear-gradient(145deg, #2a0a0a, #111);
+            padding: 30px; border-radius: 25px; border: 1px solid var(--light-pink);
+            text-align: center; max-width: 380px; width: 85%; position: relative;
+        }
+
+        .selected-summary-box {
+            background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px;
+            margin: 15px 0; text-align: left; border: 1px dashed #555;
+        }
+        .selected-summary-box ul { margin: 0; padding-left: 20px; font-size: 0.9em; color: #ffccd5; }
+        .prize-text { font-size: 1.3em; color: var(--gold); font-weight: bold; margin: 15px 0; display: block; }
+        .close { position: absolute; top: 15px; right: 20px; font-size: 25px; cursor: pointer; color: #666; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card" role="region" aria-label="Ucapan Agustus 2025">
-      <header class="header">
-        <span class="badge" aria-label="Tema bulan ini">Theme: Red</span>
-        <h1>Heyy, bulan ini tema nya merah ❤️</h1>
-        <p class="subtitle">Selamat <strong>Girlfriend Day</strong> ini untuk lucu-lucuan aja ya !!, kalo ngga dilakuin gapapa !! 🎉</p>
-      </header>
 
-      <div class="content">
-        <p class="greet">Selamat hari-hari spesial di bulan Agustus 2025! ✨</p>
-        <p class="note">I made some fun days just for you, sorry for making u feels bad before.</p>
+    <audio id="bg-music" loop>
+        <source src="bonthxu.mp3" type="audio/mpeg">
+    </audio>
 
-        <div class="grid" aria-live="polite">
-          <article class="day" data-title="National Girlfriend Day" data-message="I love you so much, Kub!. 💕<br><br>You are the reason.">
-            <div class="date"><span class="d">01</span><span class="m">Agu</span></div>
-            <div>
-              <p class="label">National Girlfriend Day</p>
-              <p class="desc">I love you so much, Kub!. 💕</p>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="bgval.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="container" id="mainCard">
+        <div id="askingSection">
+            <h1>Valentine Date? 😈</h1>
+            <p>Ready for a wild night?</p>
+            <div class="btn-group">
+                <button id="yesBtn" onclick="showMenu()">YES!</button>
+                <button id="noBtn" onmouseover="moveNo()" class="shake">No</button>
             </div>
-          </article>
-          <article class="day" data-title="National Red Lipstick Day" data-message="Nih aku beliin liptint yg warna Naughty nyahahah 💄<br><br>Lipstik merah itu tanda percaya diri & strong.">
-            <div class="date"><span class="d">18</span><span class="m">Agu</span></div>
-            <div>
-              <p class="label">National Red Lipstick Day</p>
-              <p class="desc">Lipstik merah = tanda bahaya & gairah. 💄</p>
-            </div>
-          </article>
-<!-- Ganti artikel kamu jadi pakai data-message panjang -->
-<article class="day" 
-  data-title="Focus! Strong! Health! & Anti Cupu" 
-  data-message="
-  Nih aku beliin km sesuatu 💝<br><br>
-
-  <strong>1. Blackmores Multivitamin</strong><br>
-  <em>Fungsi utama:</em> Nutrisional dasar, menutup kekurangan vitamin/mineral harian.<br>
-  <em>Manfaat:</em><br>
-  • Support energi (vitamin B-complex → metabolisme karbo/lemak/protein).<br>
-  • Imun lebih kuat (vitamin C, zinc).<br>
-  • Kesehatan otak & mood stabil (B12, folat, magnesium).<br>
-  • Ningkatin Focus.<br>
-  <em>Kasiat ke tubuh:</em> Jadi fondasi biar tubuh ga gampang drop.<br><br>
-
-  <strong>2. Vitamin E IPI</strong><br>
-  <em>Fungsi utama:</em> Antioksidan kuat.<br>
-  <em>Manfaat:</em><br>
-  • Kulit lebih sehat, lembab, glowing.<br>
-  • Support kesehatan reproduksi.<br>
-  • Perlindungan sel tubuh dari stres oksidatif.<br><br>
-
-  <strong>3. Maca Root (Solaray)</strong><br>
-  <em>Fungsi utama:</em> Adaptogen + energi.<br>
-  <em>Manfaat:</em><br>
-  • Boost stamina & energi (kayak ginseng alami).<br>
-  • Libido enhancer.<br>
-  • Mood & hormon lebih seimbang.<br><br>
-  • Ningkatin Focus.<br>
-
-  <strong>4. Tribulus (Muscletech)</strong><br>
-  <em>Fungsi utama:</em> Libido booster natural.<br>
-  <em>Manfaat:</em><br>
-  • Naikkan gairah seksual bertahap.<br>
-  • Tingkatkan energi & stamina.<br>
-  • Efek jangka panjang: vitalitas & mood lebih stabil.<br><br>
-
-  <strong>Cara konsumsi:</strong><br>
-  ☀️ Pagi (07.00–09.00)<br>
-  💊 1 tablet Multivitamin<br>
-  💊 1 kapsul Maca Root<br><br>
-
-  🌞 Siang (12.00–14.00)<br>
-  💊 1 kapsul Vitamin E<br><br>
-
-  ⭐ Optional<br>
-  💊 1 kapsul Tribulus (kalau lagi pengen On Power)<br><br>
-
-  <strong>Goals setelah 2 minggu – 1 bulan:</strong><br>
-  ✅ Auto Focus!<br>
-  ✅ Energi & stamina naik<br>
-  ✅ Vitalitas & libido meningkat<br>
-  ✅ Mood stabil & confidence naik<br>
-  ✅ Tidur lebih nyenyak<br>
-  ✅ Imun lebih kuat<br>
-  ✅ Kebugaran jangka panjang tetap terjaga<br>
-  ">
-  <div class="date"><span class="d">24</span><span class="m">Agu</span></div>
-  <div>
-    <p class="label">Focus! Strong! Health! & Anti Cupu</p>
-    <p class="desc">Stay strong & percaya diri! 💪</p>
-  </div>
-</article>
-
-          <article class="day" data-title="National Underwear Day" data-message="Hari lingerie & underwear spesial buat kamu 😉<br><br>Dress up just for fun, biar tambah exciting.">
-            <div class="date"><span class="d">25</span><span class="m">Agu</span></div>
-            <div>
-              <p class="label">National Underwear Day</p>
-              <p class="desc">Lingerie & underwear (harusnya tanggal 5)</p>
-            </div>
-          </article>
-          <article class="day" data-title="World Lovers’ Night" data-message="Malam spesial ❤️🔥<br><br>Gak harus tanggal 31, bisa bulan September, kalo mau, bilang ya ! langsung tentuin tanggal dan tempat !">
-            <div class="date"><span class="d">31</span><span class="m">Agu</span></div>
-            <div>
-              <p class="label">World Lovers’ Night</p>
-              <p class="desc">Malam spesial</p>
-            </div>
-          </article>
         </div>
-      </div>
 
-      <footer class="footer">
-        <span>Made with <span class="heart">♥</span> untuk Agustus 2025.</span>
-        <span class="theme-chip" title="Tema warna">
-          <span class="swatch" aria-hidden="true"></span>
-          <span>Red</span>
-        </span>
-      </footer>
-    </section>
-  </main>
+        <div id="menuSection" class="menu-list">
+            <h3 style="text-align: center; margin-bottom: 20px;">Pilih Menu Utama (Min. 6)</h3>
+            <div id="taskList"></div>
+            <button id="submitTasks" class="hidden" onclick="finalize()">I'm Ready 😈</button>
+        </div>
 
-  <!-- Modal -->
-  <div class="modal" id="popup">
-    <div class="modal-content">
-      <span class="close" id="closeBtn">&times;</span>
-      <h2 id="popupTitle"></h2>
-      <p id="popupMessage"></p>
+        <div id="finalSection" class="hidden">
+            <h1>You’re one hell of a fearless woman....</h1>
+            <img src="celebrate.gif" alt="❤️" style="width: 100%; border-radius: 15px; margin-bottom: 10px;">
+            <p style="font-size: 0.85em; color: #ccc; line-height: 1.4;">
+                <strong>Warning:</strong> Dengan men-screenshot ini, kamu telah menandatangani kontrak kencan yang tidak bisa diganggu gugat. No refund, no cancellation, only satisfaction. See you soon, Love..
+            </p>
+            <button id="prizeBtn" onclick="toggleModal(true)">🎁 Claim Your Prize</button>
+        </div>
     </div>
-  </div>
 
-  <script>
-    const days = document.querySelectorAll(".day");
-    const modal = document.getElementById("popup");
-    const closeBtn = document.getElementById("closeBtn");
-    const title = document.getElementById("popupTitle");
-    const message = document.getElementById("popupMessage");
+    <div id="prizeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal(false)">&times;</span>
+            <h2 style="margin-top: 0; color: var(--light-pink);">Valentine's Contract 📜</h2>
+            <div class="selected-summary-box">
+                <p style="margin-top: 0; font-weight: bold; font-size: 0.8em; color: #999;">OUR PLANS:</p>
+                <ul id="modalTaskList"></ul>
+            </div>
+            <p style="margin-bottom: 5px;">Your Prize:</p>
+            <span class="prize-text">✨ IDR. 500K ✨</span>
+            <span class="prize-text">✨ Anything ur Wish ✨</span>
+            <span class="prize-text">✨ Thank You for Loving Me! ✨</span>
+            <p style="font-size: 0.75em; color: #888; margin-top: 20px;">
+                Screenshot & kirim ke aku sebagai bukti!<br>No cancellations allowed. 😉
+            </p>
+        </div>
+    </div>
 
-    days.forEach(day=>{
-      day.addEventListener("click", ()=>{
-        title.textContent = day.dataset.title;
-        message.innerHTML = day.dataset.message; // pakai innerHTML biar bisa pakai <br>
-        modal.style.display = "flex";
-      });
-    });
+    <script>
+        const tasks = [
+            "Makan Malam Romantis", "Dugem / Party", 
+            "Watching a Hot Movie (Netflix & Chill)", "Hug (Pelukan Hangat)", 
+            "Truth or Dare (Wild Version)", "Beli Seblak Level Pedas", 
+            "Staycation", "French Kiss", "Touch Anything", "Candle Light Drink",
+            "Roleplay Session", "Late Night Drive"
+        ];
 
-    closeBtn.addEventListener("click", ()=> modal.style.display="none");
-    window.addEventListener("click", (e)=>{
-      if(e.target===modal) modal.style.display="none";
-    });
-  </script>
+        let selectedTasks = [];
+
+        function initTasks() {
+            const list = document.getElementById('taskList');
+            list.innerHTML = ""; // Bersihkan list agar tidak duplikat
+            tasks.forEach(task => {
+                const div = document.createElement('div');
+                div.className = 'task-item';
+                div.innerHTML = `<input type="checkbox" class="task-check" value="${task}"> <span>${task}</span>`;
+                div.onclick = (e) => {
+                    if(e.target.tagName !== 'INPUT') {
+                        const cb = div.querySelector('input');
+                        cb.checked = !cb.checked;
+                    }
+                    checkCount();
+                };
+                list.appendChild(div);
+            });
+        }
+
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        // FUNGSI INI SUDAH DISATUKAN & DIPERBAIKI
+        function showMenu() {
+            // 1. Jalankan musik
+            const music = document.getElementById('bg-music');
+            music.play().catch(e => console.log("Perlu interaksi user"));
+
+            // 2. Ganti tampilan
+            document.getElementById('askingSection').classList.add('hidden');
+            document.getElementById('menuSection').style.display = 'block';
+            
+            // 3. Munculkan list
+            initTasks();
+        }
+
+        function checkCount() {
+            const checkedBoxes = document.querySelectorAll('.task-check:checked');
+            selectedTasks = Array.from(checkedBoxes).map(cb => cb.value);
+            const btn = document.getElementById('submitTasks');
+            btn.classList.toggle('hidden', selectedTasks.length < 6);
+        }
+
+        function finalize() {
+            document.getElementById('menuSection').style.display = 'none';
+            document.getElementById('finalSection').classList.remove('hidden');
+            
+            const modalList = document.getElementById('modalTaskList');
+            modalList.innerHTML = "";
+            selectedTasks.forEach(task => {
+                const li = document.createElement('li');
+                li.innerText = task;
+                modalList.appendChild(li);
+            });
+        }
+
+        function toggleModal(show) {
+            document.getElementById('prizeModal').style.display = show ? 'flex' : 'none';
+        }
+
+        window.onclick = (event) => {
+            const modal = document.getElementById('prizeModal');
+            if (event.target == modal) toggleModal(false);
+        }
+    </script>
 </body>
 </html>
-
