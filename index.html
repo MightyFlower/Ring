@@ -25,6 +25,44 @@
             z-index: -1; object-fit: cover;
             filter: brightness(40%); 
         }
+      
+              /* Login Overlay Styling */
+        #loginOverlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            z-index: 9999; /* Pastikan di paling atas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid var(--primary-red);
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+        }
+
+        .login-box input {
+            background: #222;
+            border: 1px solid #444;
+            padding: 12px;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            outline: none;
+        }
+
+        .login-box button {
+            background: var(--primary-red);
+            padding: 10px 25px;
+            font-size: 0.9em;
+        }
 
         .container {
             text-align: center; background: rgba(255, 255, 255, 0.08);
@@ -86,6 +124,17 @@
     </style>
 </head>
 <body>
+  
+  <div id="loginOverlay">
+    <div class="login-box">
+        <h2 style="color: var(--light-pink);">Restricted Access ⚠️</h2>
+        <p style="font-size: 0.8em; color: #888;">Only for my favorite person.</p>
+        <input type="password" id="passInput" placeholder="Enter Password...">
+        <br>
+        <button onclick="checkPass()">Unlock</button>
+        <p id="errorMsg" style="color: red; font-size: 0.7em; margin-top: 10px; display: none;">Wrong password, try again baby. 😉</p>
+    </div>
+</div>
 
     <audio id="bg-music" loop>
         <source src="bonthxu.mp3" type="audio/mpeg">
@@ -220,6 +269,27 @@
             const modal = document.getElementById('prizeModal');
             if (event.target == modal) toggleModal(false);
         }
+        
+        function checkPass() {
+    const pass = document.getElementById('passInput').value;
+    const correctPass = "bagusisproandbungaisnoob"; // <--- GANTI PASSWORD DI SINI
+
+    if (pass.toLowerCase() === correctPass.toLowerCase()) {
+        document.getElementById('loginOverlay').style.display = 'none';
+        // Opsional: Langsung play musik pas login berhasil
+        // const music = document.getElementById('bg-music');
+        // music.play(); 
+    } else {
+        document.getElementById('errorMsg').style.display = 'block';
+    }
+}
+
+// Tambahan: Supaya bisa tekan Enter buat login
+document.getElementById('passInput').addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        checkPass();
+    }
+});
     </script>
 </body>
 </html>
